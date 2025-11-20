@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juan Sebastian · Creatividad en Movimiento</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="site-nav__brand">jsdejuansebastian</div>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+      </button>
+      <ul class="site-nav__menu">
+        <li><a href="#libro">Mi libro</a></li>
+        <li><a href="#contacto">Email</a></li>
+        <li>
+          <a href="mailto:hola@juansebastian.com">Contáctame</a>
+        </li>
+      </ul>
+    </nav>
+    <header class="hero">
+      <div class="hero__text">
+        <h1 id="filosofia" data-type-title>Solo quiero venderte <br>mi libro. Desliza.</h1>
+        <div class="hero__cta hero__cta--text" aria-label="Redes sociales">
+          <a
+            href="https://www.instagram.com/jsdejuansebastian"
+            target="_blank"
+            rel="noreferrer"
+            >Instagram</a
+          >
+          <a
+            href="https://www.tiktok.com/@jsdejuansebastian"
+            target="_blank"
+            rel="noreferrer"
+            >TikTok</a
+          >
+          <a
+            href="https://www.amazon.es/Grácil-vida-Breves-textos-cuestiones/dp/B0DBGKMRLQ"
+            target="_blank"
+            rel="noreferrer"
+            >Amazon</a
+          >
+        </div>
+      </div>
+      <div class="hero__portrait">
+        <img src="foto.jpeg" alt="Retrato conceptual de Juan Sebastian" />
+      </div>
+    </header>
+
+    <main>
+      <section class="feature feature--book" id="libro">
+        <figure class="feature__image">
+          <img src="libro.jpg" alt="Portada de Grácil vida" />
+        </figure>
+        <div class="feature__content">
+        
+          <p>Ser libres no es un regalo, es una decisión. Y duele. La libertad no pide permiso: exige coraje. Coraje para decir la verdad, dejar de fingir, soltar lo que mata el alma y romper lo que encadena la mente.</p>
+          <p>He escrito un putísimo libro donde resumo mi filosofía sobre el pensamiento, la consciencia y la vida. Directo, corto y sin rodeos.</p>
+          <a
+            class="btn btn--amazon"
+            href="https://www.amazon.es/Grácil-vida-Breves-textos-cuestiones/dp/B0DBGKMRLQ"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ver en Amazon
+          </a>
+        </div>
+      </section>
+
+      <section class="contact" id="contacto"></section>
+    </main>
+  </body>
+  <script>
+    const title = document.querySelector("[data-type-title]");
+    if (title) {
+      const html = title.innerHTML;
+      title.innerHTML = "";
+      const parts = html.split("<br>");
+      
+      parts.forEach((part, partIdx) => {
+        if (partIdx > 0) {
+          const br = document.createElement("br");
+          title.appendChild(br);
+        }
+        [...part].forEach((char, idx) => {
+          const span = document.createElement("span");
+          span.textContent = char === " " ? "\u00A0" : char;
+          const totalIdx = parts.slice(0, partIdx).join("").length + idx;
+          span.style.setProperty("--char-delay", `${totalIdx * 45}ms`);
+          span.classList.add("char");
+          title.appendChild(span);
+        });
+      });
+    }
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".site-nav__menu");
+    
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", !isOpen);
+        menuToggle.classList.toggle("menu-toggle--open");
+        navMenu.classList.toggle("site-nav__menu--open");
+        document.body.classList.toggle("menu-open");
+      });
+
+      navMenu.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.classList.remove("menu-toggle--open");
+          navMenu.classList.remove("site-nav__menu--open");
+          document.body.classList.remove("menu-open");
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (navMenu.classList.contains("site-nav__menu--open") && 
+            !navMenu.contains(e.target) && 
+            !menuToggle.contains(e.target)) {
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.classList.remove("menu-toggle--open");
+          navMenu.classList.remove("site-nav__menu--open");
+          document.body.classList.remove("menu-open");
+        }
+      });
+    }
+  </script>
+</html>
+
+
+
