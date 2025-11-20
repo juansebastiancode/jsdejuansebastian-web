@@ -175,6 +175,13 @@ body {
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
+.hero__cta--text span {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.95rem;
+}
+
 .hero__cta--text a:hover {
   color: var(--accent-secondary);
 }
@@ -547,7 +554,8 @@ main {
     align-items: center;
   }
 
-  .hero__cta--text a {
+  .hero__cta--text a,
+  .hero__cta--text span {
     font-size: 1.4rem;
   }
 
@@ -634,7 +642,8 @@ main {
     gap: 0.8rem;
   }
 
-  .hero__cta--text a {
+  .hero__cta--text a,
+  .hero__cta--text span {
     font-size: 1.3rem;
     text-align: center;
   }
