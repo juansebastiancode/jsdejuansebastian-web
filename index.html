@@ -62,6 +62,7 @@
         <span class="menu-toggle__line"></span>
       </button>
       <ul class="site-nav__menu">
+        <li><a href="#reflexiones">Reflexiones</a></li>
         <li>
           <a href="https://www.instagram.com/jsdejuansebastian" target="_blank" rel="noreferrer">
             Instagram
@@ -119,14 +120,46 @@
 
       <div class="section-separator" aria-hidden="true"></div>
 
-      <section class="quotes" aria-label="Frases destacadas">
+      <section class="quotes" aria-label="Frases destacadas" id="reflexiones">
           <h3 class="quotes__title">
             Reflexiones diarias que <br />me salen de los... ALMA <br />
           </h3>
         <div class="quotes__list">
-          <p class="quotes__line">“El lenguaje es un arma cargada de intenciones.” — 19/11/2025</p>
-          <p class="quotes__line">“Pensar es desobedecer a la versión cómoda de uno mismo.” — 20/11/2025</p>
-          <p class="quotes__line">“La consciencia es el ruido que nos obliga a ser honestos.” — 21/11/2025</p>
+          <div class="quotes__item">
+            <span class="quotes__date">20 nov</span>
+            <p class="quotes__line">El lenguaje es un arma cargada de intenciones</p>
+            <div class="quotes__text">
+              <p>Las palabras no son solo sonidos o símbolos. Cada una lleva consigo una carga emocional, una intención, un propósito. Cuando hablamos, no solo comunicamos información, sino que construimos realidades, moldeamos percepciones y abrimos o cerramos puertas en la mente del otro.</p>
+            </div>
+          </div>
+          <div class="quotes__item">
+            <span class="quotes__date">19 nov</span>
+            <p class="quotes__line">Pensar es desobedecer a la versión cómoda de uno mismo</p>
+            <div class="quotes__text">
+              <p>Pensar de verdad implica cuestionar todo lo que damos por sentado. Es un acto de rebeldía contra la comodidad de las respuestas fáciles, contra la pereza mental que nos lleva a aceptar sin cuestionar. Pensar es incómodo porque nos obliga a enfrentarnos con nuestras propias contradicciones.</p>
+            </div>
+          </div>
+          <div class="quotes__item">
+            <span class="quotes__date">18 nov</span>
+            <p class="quotes__line">La consciencia es el ruido que nos obliga a ser honestos</p>
+            <div class="quotes__text">
+              <p>La consciencia no es silenciosa. Es un ruido constante que nos recuerda quiénes somos realmente, qué hemos hecho y qué deberíamos hacer. No podemos apagarla, solo podemos intentar ignorarla, pero siempre está ahí, en el fondo, recordándonos la verdad que preferiríamos olvidar.</p>
+            </div>
+          </div>
+          <div class="quotes__item">
+            <span class="quotes__date">17 nov</span>
+            <p class="quotes__line">La libertad no se pide, se toma</p>
+            <div class="quotes__text">
+              <p>Nadie te va a dar la libertad en una bandeja de plata. La libertad no es un regalo que se recibe, es algo que se conquista, que se toma con decisión y coraje. Esperar que alguien nos dé la libertad es renunciar a ella antes de siquiera intentar alcanzarla.</p>
+            </div>
+          </div>
+          <div class="quotes__item">
+            <span class="quotes__date">16 nov</span>
+            <p class="quotes__line">Ser auténtico es el único lujo que importa</p>
+            <div class="quotes__text">
+              <p>En un mundo lleno de máscaras y apariencias, ser auténtico se ha convertido en un lujo. No el lujo de los objetos caros o las experiencias exclusivas, sino el lujo de poder ser uno mismo sin disculpas, sin miedo, sin necesidad de fingir. Ese es el único lujo que realmente importa.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -186,6 +219,24 @@
           navMenu.classList.remove("site-nav__menu--open");
           document.body.classList.remove("menu-open");
         }
+      });
+    }
+
+    // Actualizar fechas automáticamente
+    const dateElements = document.querySelectorAll(".quotes__date");
+    const meses = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+    
+    if (dateElements.length > 0) {
+      const hoy = new Date();
+      
+      dateElements.forEach((element, index) => {
+        const fecha = new Date(hoy);
+        fecha.setDate(hoy.getDate() - index);
+        
+        const dia = fecha.getDate();
+        const mes = meses[fecha.getMonth()];
+        
+        element.textContent = `${dia} ${mes}`;
       });
     }
   </script>
