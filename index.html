@@ -193,9 +193,8 @@
     const API_BASE_URL = window.API_BASE_URL || (
       window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
         ? 'http://localhost:3000'
-        : window.location.origin // En producción, mismo origen o configurar API_BASE_URL
+        : 'https://jsdejuansebastian-admin-production.up.railway.app' // URL de Railway en producción
     );
-    const API_URL = `${API_BASE_URL}/api/reflexion-hoy`;
     const API_HISTORIAL_URL = `${API_BASE_URL}/api/reflexiones`;
 
     // Función para formatear fecha
