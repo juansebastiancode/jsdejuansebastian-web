@@ -62,7 +62,6 @@
         <span class="menu-toggle__line"></span>
       </button>
       <ul class="site-nav__menu">
-        <li><a href="#reflexiones">Reflexiones</a></li>
         <li>
           <a href="https://www.instagram.com/jsdejuansebastian" target="_blank" rel="noreferrer">
             Instagram
@@ -87,7 +86,7 @@
     </nav>
     <header class="hero">
       <div class="hero__text">
-        <h1 id="filosofia" data-type-title>Quiero venderte <br>mi libro. Desliza.</h1>
+        <h1 id="filosofia" data-type-title>Solo hablo de <br>tres cosas. Desliza.</h1>
         <div class="hero__cta hero__cta--text" aria-label="Conceptos clave">
           <span>Consciencia</span>
           <span>Proyectos</span>
@@ -100,13 +99,32 @@
     </header>
 
     <main>
+      <section class="newsletter" id="newsletter">
+        <div class="newsletter__container">
+          <p class="newsletter__subtitle">Pon tu email y recibirás de vez en cuando Fragmentos de mis reflexiones sobre los temas más importantes de esta vida</p>
+          <form id="newsletterForm" class="newsletter__form">
+            <input 
+              type="email" 
+              id="newsletterEmail" 
+              name="email" 
+              placeholder="Tu correo electrónico" 
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              class="newsletter__input"
+            />
+            <button type="submit" class="btn btn--newsletter" id="newsletterButton" disabled>Quiero recibir ;)</button>
+          </form>
+          <div id="newsletterMessage" class="newsletter__message"></div>
+        </div>
+      </section>
+
       <section class="feature feature--book" id="libro">
         <figure class="feature__image">
           <img src="libro.jpg" alt="Portada de Grácil vida" />
         </figure>
         <div class="feature__content">
-        
-          <p>He escrito un libro donde resumo mi filosofía sobre el pensamiento, la vida y la LIBERTAD. Directo, corto y sin rodeos.</p>
+          <p style="color: var(--muted); text-transform: uppercase; letter-spacing: 0.2em; font-size: clamp(1.2rem, 3vw, 2rem); margin-bottom: 1rem; font-family: var(--font-sans);">1. Consciencia</p>
+          <p>He escrito un libro donde resumo mi filosofía sobre el pensamiento, la conscienica y la vida. Directo, MUY CORTO y sin rodeos.</p>
           <a
             class="btn btn--amazon"
             href="https://www.amazon.es/Grácil-vida-Breves-textos-cuestiones/dp/B0DBGKMRLQ"
@@ -118,18 +136,6 @@
         </div>
       </section>
 
-      <div class="section-separator" aria-hidden="true"></div>
-
-      <section class="quotes" aria-label="Frases destacadas" id="reflexiones">
-          <h3 class="quotes__title">
-            Reflexiones que <br />me salen de los... del ALMA <br />
-          </h3>
-        <div class="quotes__list" id="quotesList">
-          <!-- Las reflexiones se cargarán aquí dinámicamente desde el historial -->
-        </div>
-      </section>
-
-      <section class="contact" id="contacto"></section>
     </main>
   </body>
   <script>
@@ -264,8 +270,103 @@
       }
     }
 
-    // Cargar todas las reflexiones al cargar la página
-    cargarReflexiones();
+    // Newsletter
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterMessage = document.getElementById('newsletterMessage');
+    const newsletterEmail = document.getElementById('newsletterEmail');
+    const newsletterButton = document.getElementById('newsletterButton');
+    
+    // Función para validar email y mostrar/ocultar botón
+    function validarEmail() {
+      const email = newsletterEmail.value.trim();
+      const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+      const esValido = email && emailRegex.test(email);
+      const hayTexto = email.length > 0;
+      
+      if (newsletterButton) {
+        // Mostrar botón si hay texto, ocultarlo si está vacío
+        if (hayTexto) {
+          newsletterButton.style.display = 'block';
+          // Habilitar solo si es válido
+          newsletterButton.disabled = !esValido;
+        } else {
+          newsletterButton.style.display = 'none';
+          newsletterButton.disabled = true;
+        }
+      }
+    }
+    
+    // Validar en tiempo real mientras el usuario escribe
+    if (newsletterEmail) {
+      newsletterEmail.addEventListener('input', validarEmail);
+      newsletterEmail.addEventListener('blur', validarEmail);
+    }
+    
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const email = newsletterEmail.value.trim();
+        
+        if (!email) {
+          return;
+        }
+        
+        // Validar formato de email
+        const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+        if (!emailRegex.test(email)) {
+          newsletterMessage.className = 'newsletter__message error';
+          newsletterMessage.textContent = 'Por favor, introduce un correo electrónico válido';
+          
+          setTimeout(() => {
+            newsletterMessage.className = 'newsletter__message';
+          }, 5000);
+          return;
+        }
+        
+        try {
+          const response = await fetch(`${API_BASE_URL}/api/newsletter/subscribe`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+          });
+          
+          const data = await response.json();
+          
+          if (response.ok) {
+            newsletterMessage.className = 'newsletter__message success';
+            newsletterMessage.textContent = '¡Te has suscrito exitosamente!';
+            newsletterForm.reset();
+            
+            // Ocultar botón después de enviar
+            if (newsletterButton) {
+              newsletterButton.disabled = true;
+              newsletterButton.style.display = 'none';
+            }
+            
+            setTimeout(() => {
+              newsletterMessage.className = 'newsletter__message';
+            }, 5000);
+          } else {
+            newsletterMessage.className = 'newsletter__message error';
+            newsletterMessage.textContent = data.error || 'Error al suscribirse';
+            
+            setTimeout(() => {
+              newsletterMessage.className = 'newsletter__message';
+            }, 5000);
+          }
+        } catch (error) {
+          newsletterMessage.className = 'newsletter__message error';
+          newsletterMessage.textContent = 'Error de conexión. Intenta de nuevo.';
+          
+          setTimeout(() => {
+            newsletterMessage.className = 'newsletter__message';
+          }, 5000);
+        }
+      });
+    }
   </script>
 </html>
 
