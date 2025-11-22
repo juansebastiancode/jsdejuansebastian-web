@@ -571,13 +571,19 @@ main {
 }
 
 @media (max-width: 768px) {
+  .newsletter {
+    padding: 0.5rem clamp(1.5rem, 6vw, 6rem) 3rem;
+  }
+  
   .newsletter__container {
     flex-direction: column;
     text-align: center;
+    gap: 1.5rem;
   }
   
   .newsletter__subtitle {
     text-align: left;
+    margin: 0;
   }
   
   .newsletter__form {
