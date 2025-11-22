@@ -511,9 +511,9 @@ main {
 
 .newsletter__input:focus {
   outline: none;
-  border-color: var(--accent-secondary);
-  background: transparent;
-  box-shadow: 0 0 25px rgba(83, 224, 255, 0.45), inset 0 0 12px rgba(83, 224, 255, 0.35);
+  border-color: rgba(83, 224, 255, 0.6);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 18px rgba(83, 224, 255, 0.25), inset 0 0 10px rgba(83, 224, 255, 0.2);
 }
 
 .btn--newsletter {
