@@ -495,13 +495,14 @@ main {
   width: 100%;
   max-width: 500px;
   padding: 14px 18px;
-  border: 2px solid var(--accent-secondary);
+  border: 1px solid rgba(83, 224, 255, 0.6);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
   color: var(--text);
   font-size: 16px;
   font-family: var(--font-sans);
   transition: border-color 0.3s, background 0.3s;
+  box-shadow: 0 0 18px rgba(83, 224, 255, 0.25), inset 0 0 10px rgba(83, 224, 255, 0.2);
 }
 
 .newsletter__input::placeholder {
@@ -511,8 +512,8 @@ main {
 .newsletter__input:focus {
   outline: none;
   border-color: var(--accent-secondary);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 10px rgba(83, 224, 255, 0.3);
+  background: transparent;
+  box-shadow: 0 0 25px rgba(83, 224, 255, 0.45), inset 0 0 12px rgba(83, 224, 255, 0.35);
 }
 
 .btn--newsletter {
@@ -530,7 +531,7 @@ main {
   cursor: pointer;
   width: 100%;
   max-width: 500px;
-  display: none;
+  display: none !important;
 }
 
 .btn--newsletter:hover:not(:disabled) {
@@ -598,6 +599,7 @@ main {
   
   .btn--newsletter {
     width: 100%;
+    display: none !important;
   }
 }
 

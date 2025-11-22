@@ -101,7 +101,7 @@
     <main>
       <section class="newsletter" id="newsletter">
         <div class="newsletter__container">
-          <p class="newsletter__subtitle">Pon tu email y recibirás de vez en cuando Fragmentos de mis reflexiones sobre los temas más importantes de esta vida</p>
+          <p class="newsletter__subtitle">Pon tu email y recibirás de vez en cuando fragmentos de mis reflexiones sobre los putos temas más importantes de tu vida</p>
           <form id="newsletterForm" class="newsletter__form">
             <input 
               type="email" 
@@ -124,7 +124,7 @@
         </figure>
         <div class="feature__content">
           <p style="color: var(--muted); text-transform: uppercase; letter-spacing: 0.2em; font-size: clamp(1.2rem, 3vw, 2rem); margin-bottom: 1rem; font-family: var(--font-sans);">1. Consciencia</p>
-          <p>Aquí resumo mi filosofía sobre el pensamiento, la conscienica y la vida. Directo, MUY CORTO y sin rodeos.</p>
+          <p>Aquí resumo mi filosofía sobre el pensamiento, la conscienica y la vida. Directo, MUY CORTO y sin rodeos</p>
           <a
             class="btn btn--amazon"
             href="https://www.amazon.es/Grácil-vida-Breves-textos-cuestiones/dp/B0DBGKMRLQ"
@@ -287,13 +287,21 @@
         // Mostrar botón si hay texto, ocultarlo si está vacío
         if (hayTexto) {
           newsletterButton.style.display = 'block';
+          newsletterButton.style.setProperty('display', 'block', 'important');
           // Habilitar solo si es válido
           newsletterButton.disabled = !esValido;
         } else {
           newsletterButton.style.display = 'none';
+          newsletterButton.style.setProperty('display', 'none', 'important');
           newsletterButton.disabled = true;
         }
       }
+    }
+    
+    // Asegurar que el botón esté oculto al cargar la página
+    if (newsletterButton) {
+      newsletterButton.style.display = 'none';
+      newsletterButton.style.setProperty('display', 'none', 'important');
     }
     
     // Validar en tiempo real mientras el usuario escribe
