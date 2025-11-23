@@ -107,11 +107,9 @@
               type="email" 
               id="newsletterEmail" 
               name="email" 
-              placeholder="Disponible en unos días" 
+              placeholder="Tu correo electrónico" 
               required
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               class="newsletter__input"
-              disabled
             />
             <button type="submit" class="btn btn--newsletter" id="newsletterButton" disabled>Quiero recibir ;)</button>
           </form>
@@ -199,8 +197,8 @@
     // Si hay una variable de entorno configurada, úsala, sino detecta automáticamente
     const API_BASE_URL = window.API_BASE_URL || (
       window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-        ? 'http://localhost:3000'
-        : 'https://jsdejuansebastian-admin-production.up.railway.app' // URL de Railway en producción
+        ? 'http://localhost:8080'
+        : 'https://jsdejuansebastian-admin-production.up.railway.app'
     );
     const API_HISTORIAL_URL = `${API_BASE_URL}/api/reflexiones`;
 
