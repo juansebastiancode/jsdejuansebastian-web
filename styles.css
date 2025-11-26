@@ -251,8 +251,8 @@ body {
   letter-spacing: 0.2em;
   font-size: 0.95rem;
   font-weight: 500;
-  border: 1px solid rgba(83, 224, 255, 0.6);
-  box-shadow: 0 0 18px rgba(83, 224, 255, 0.25), inset 0 0 10px rgba(83, 224, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.2);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   padding: 0.7rem 1.4rem;
   transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
@@ -261,10 +261,10 @@ body {
 
 .btn--amazon:hover {
   background: transparent;
-  color: var(--accent-secondary);
-  border-color: var(--accent-secondary);
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.9);
   transform: translateY(0);
-  box-shadow: 0 0 25px rgba(83, 224, 255, 0.45), inset 0 0 12px rgba(83, 224, 255, 0.35);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.45), inset 0 0 12px rgba(255, 255, 255, 0.35);
 }
 
 .btn:hover {
@@ -348,10 +348,10 @@ main {
   margin: 0;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(83, 224, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   background: rgba(255, 255, 255, 0.02);
-  box-shadow: 0 0 15px rgba(83, 224, 255, 0.2),
-    0 0 30px rgba(255, 77, 158, 0.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+    0 0 40px rgba(255, 255, 255, 0.15);
   position: relative;
   max-width: 360px;
   width: 100%;
@@ -362,7 +362,7 @@ main {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: inset 0 0 15px rgba(83, 224, 255, 0.25);
+  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.3);
   pointer-events: none;
 }
 
@@ -372,6 +372,51 @@ main {
   object-fit: cover;
   display: block;
   filter: saturate(1.1);
+}
+
+.feature__image--loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.book-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.book-loading__spinner {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.book-loading__text {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-family: var(--font-sans);
+}
+
+.btn--coming-soon {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .quotes {
@@ -495,14 +540,14 @@ main {
   width: 100%;
   max-width: 500px;
   padding: 14px 18px;
-  border: 1px solid rgba(83, 224, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.03);
   color: var(--text);
   font-size: 16px;
   font-family: var(--font-sans);
   transition: border-color 0.3s, background 0.3s;
-  box-shadow: 0 0 18px rgba(83, 224, 255, 0.25), inset 0 0 10px rgba(83, 224, 255, 0.2);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .newsletter__input::placeholder {
@@ -511,9 +556,9 @@ main {
 
 .newsletter__input:focus {
   outline: none;
-  border-color: rgba(83, 224, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.6);
   background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 0 18px rgba(83, 224, 255, 0.25), inset 0 0 10px rgba(83, 224, 255, 0.2);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .btn--newsletter {
@@ -523,8 +568,8 @@ main {
   letter-spacing: 0.2em;
   font-size: 0.95rem;
   font-weight: 500;
-  border: 1px solid rgba(83, 224, 255, 0.6);
-  box-shadow: 0 0 18px rgba(83, 224, 255, 0.25), inset 0 0 10px rgba(83, 224, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.2);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   padding: 14px 28px;
   transition: all 0.2s;
@@ -536,9 +581,9 @@ main {
 
 .btn--newsletter:hover:not(:disabled) {
   background: transparent;
-  color: var(--accent-secondary);
-  border-color: var(--accent-secondary);
-  box-shadow: 0 0 25px rgba(83, 224, 255, 0.45), inset 0 0 12px rgba(83, 224, 255, 0.35);
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.45), inset 0 0 12px rgba(255, 255, 255, 0.35);
   transform: translateY(-2px);
 }
 
