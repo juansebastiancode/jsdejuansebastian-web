@@ -554,8 +554,16 @@ main {
   width: 18px;
   height: 18px;
   cursor: pointer;
-  accent-color: rgba(255, 255, 255, 0.8);
+  accent-color: rgba(255, 255, 255, 1);
   flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+}
+
+.newsletter__checkbox:checked {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 1);
 }
 
 .newsletter__checkbox-label a {
