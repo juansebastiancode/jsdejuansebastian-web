@@ -891,7 +891,7 @@ main {
 
   .hero__cta--text a,
   .hero__cta--text span {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
     white-space: nowrap !important;
     display: inline-block;
     flex-shrink: 0;
@@ -991,7 +991,7 @@ main {
 
   .hero__cta--text a,
   .hero__cta--text span {
-    font-size: 0.75rem !important;
+    font-size: 0.95rem !important;
     text-align: left;
     white-space: nowrap !important;
     display: inline-block;
