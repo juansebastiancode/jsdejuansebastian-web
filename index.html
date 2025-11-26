@@ -111,6 +111,16 @@
               required
               class="newsletter__input"
             />
+            <label class="newsletter__checkbox-label">
+              <input 
+                type="checkbox" 
+                id="privacyCheckbox" 
+                name="privacy" 
+                required
+                class="newsletter__checkbox"
+              />
+              <span>Acepto la <a href="/legal.html" target="_blank">política de privacidad</a></span>
+            </label>
             <button type="submit" class="btn btn--newsletter" id="newsletterButton" disabled>Quiero recibir ;)</button>
           </form>
           <div id="newsletterMessage" class="newsletter__message"></div>
@@ -297,14 +307,16 @@
       const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
       const esValido = email && emailRegex.test(email);
       const hayTexto = email.length > 0;
+      const privacyCheckbox = document.getElementById('privacyCheckbox');
+      const privacyAceptada = privacyCheckbox ? privacyCheckbox.checked : false;
       
       if (newsletterButton) {
         // Mostrar botón si hay texto, ocultarlo si está vacío
         if (hayTexto) {
           newsletterButton.style.display = 'block';
           newsletterButton.style.setProperty('display', 'block', 'important');
-          // Habilitar solo si es válido
-          newsletterButton.disabled = !esValido;
+          // Habilitar solo si es válido Y la política está aceptada
+          newsletterButton.disabled = !(esValido && privacyAceptada);
         } else {
           newsletterButton.style.display = 'none';
           newsletterButton.style.setProperty('display', 'none', 'important');
@@ -325,11 +337,18 @@
       newsletterEmail.addEventListener('blur', validarEmail);
     }
     
+    // Validar cuando cambia el checkbox de privacidad
+    const privacyCheckbox = document.getElementById('privacyCheckbox');
+    if (privacyCheckbox) {
+      privacyCheckbox.addEventListener('change', validarEmail);
+    }
+    
     if (newsletterForm) {
       newsletterForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         const email = newsletterEmail.value.trim();
+        const privacyCheckbox = document.getElementById('privacyCheckbox');
         
         if (!email) {
           return;
@@ -340,6 +359,17 @@
         if (!emailRegex.test(email)) {
           newsletterMessage.className = 'newsletter__message error';
           newsletterMessage.textContent = 'Por favor, introduce un correo electrónico válido';
+          
+          setTimeout(() => {
+            newsletterMessage.className = 'newsletter__message';
+          }, 5000);
+          return;
+        }
+        
+        // Validar que la política de privacidad esté aceptada
+        if (!privacyCheckbox || !privacyCheckbox.checked) {
+          newsletterMessage.className = 'newsletter__message error';
+          newsletterMessage.textContent = 'Debes aceptar la política de privacidad para continuar';
           
           setTimeout(() => {
             newsletterMessage.className = 'newsletter__message';
@@ -362,6 +392,11 @@
             newsletterMessage.className = 'newsletter__message success';
             newsletterMessage.textContent = 'Perfecto!';
             newsletterForm.reset();
+            
+            // Desmarcar checkbox después de enviar
+            if (privacyCheckbox) {
+              privacyCheckbox.checked = false;
+            }
             
             // Ocultar botón después de enviar
             if (newsletterButton) {
