@@ -102,41 +102,13 @@
     </header>
 
     <main>
-      <section class="newsletter" id="newsletter">
-        <div class="newsletter__container">
-          <p class="newsletter__subtitle">Pon tu email y recibirás de vez en cuando (cuando me dé la gana) pequeñas reflexiones sobre los temas más importantes de tu vida</p>
-          <form id="newsletterForm" class="newsletter__form">
-            <input 
-              type="email" 
-              id="newsletterEmail" 
-              name="email" 
-              placeholder="Tu correo electrónico" 
-              required
-              class="newsletter__input"
-            />
-            <label class="newsletter__checkbox-label">
-              <input 
-                type="checkbox" 
-                id="privacyCheckbox" 
-                name="privacy" 
-                required
-                class="newsletter__checkbox"
-              />
-              <span>Acepto la <a href="/legal.html" target="_blank">política de privacidad</a></span>
-            </label>
-            <button type="submit" class="btn btn--newsletter" id="newsletterButton" disabled>Quiero recibir ;)</button>
-          </form>
-          <div id="newsletterMessage" class="newsletter__message"></div>
-        </div>
-      </section>
-
       <section class="feature feature--book" id="libro">
         <figure class="feature__image">
           <img src="libro.jpg" alt="Portada de Grácil vida" />
         </figure>
         <div class="feature__content">
           <p style="color: var(--muted); text-transform: uppercase; letter-spacing: 0.2em; font-size: clamp(1.2rem, 3vw, 2rem); margin-bottom: 1rem; font-family: var(--font-sans);">1. Consciencia</p>
-          <p>Aquí resumo mi filosofía sobre el pensamiento, la conscienica y la vida. Directo, MUY CORTO y sin rodeos</p>
+          <p>Filosofía sobre el pensamiento, la conscienica y la vida. Directo, MUY CORTO y sin rodeos</p>
           <a
             class="btn btn--amazon"
             href="https://www.amazon.es/Grácil-vida-Breves-textos-cuestiones/dp/B0DBGKMRLQ"
@@ -306,10 +278,10 @@
     
     // Función para validar email y mostrar/ocultar botón
     function validarEmail() {
-      const email = newsletterEmail.value.trim();
+      const email = newsletterEmail?.value.trim();
       const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
       const esValido = email && emailRegex.test(email);
-      const hayTexto = email.length > 0;
+      const hayTexto = email && email.length > 0;
       const privacyCheckbox = document.getElementById('privacyCheckbox');
       const privacyAceptada = privacyCheckbox ? privacyCheckbox.checked : false;
       
@@ -350,7 +322,7 @@
       newsletterForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        const email = newsletterEmail.value.trim();
+        const email = newsletterEmail?.value.trim();
         const privacyCheckbox = document.getElementById('privacyCheckbox');
         
         if (!email) {
@@ -360,23 +332,27 @@
         // Validar formato de email
         const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
         if (!emailRegex.test(email)) {
-          newsletterMessage.className = 'newsletter__message error';
-          newsletterMessage.textContent = 'Por favor, introduce un correo electrónico válido';
-          
-          setTimeout(() => {
-            newsletterMessage.className = 'newsletter__message';
-          }, 5000);
+          if (newsletterMessage) {
+            newsletterMessage.className = 'newsletter__message error';
+            newsletterMessage.textContent = 'Por favor, introduce un correo electrónico válido';
+            
+            setTimeout(() => {
+              newsletterMessage.className = 'newsletter__message';
+            }, 5000);
+          }
           return;
         }
         
         // Validar que la política de privacidad esté aceptada
         if (!privacyCheckbox || !privacyCheckbox.checked) {
-          newsletterMessage.className = 'newsletter__message error';
-          newsletterMessage.textContent = 'Debes aceptar la política de privacidad para continuar';
-          
-          setTimeout(() => {
-            newsletterMessage.className = 'newsletter__message';
-          }, 5000);
+          if (newsletterMessage) {
+            newsletterMessage.className = 'newsletter__message error';
+            newsletterMessage.textContent = 'Debes aceptar la política de privacidad para continuar';
+            
+            setTimeout(() => {
+              newsletterMessage.className = 'newsletter__message';
+            }, 5000);
+          }
           return;
         }
         
@@ -392,9 +368,13 @@
           const data = await response.json();
           
           if (response.ok) {
-            newsletterMessage.className = 'newsletter__message success';
-            newsletterMessage.textContent = 'Perfecto!';
-            newsletterForm.reset();
+            if (newsletterMessage) {
+              newsletterMessage.className = 'newsletter__message success';
+              newsletterMessage.textContent = 'Perfecto!';
+            }
+            if (newsletterForm) {
+              newsletterForm.reset();
+            }
             
             // Desmarcar checkbox después de enviar
             if (privacyCheckbox) {
@@ -407,27 +387,34 @@
               newsletterButton.style.display = 'none';
             }
             
-            setTimeout(() => {
-              newsletterMessage.className = 'newsletter__message';
-            }, 5000);
+            if (newsletterMessage) {
+              setTimeout(() => {
+                newsletterMessage.className = 'newsletter__message';
+              }, 5000);
+            }
           } else {
+            if (newsletterMessage) {
+              newsletterMessage.className = 'newsletter__message error';
+              newsletterMessage.textContent = data.error || 'Error al suscribirse';
+              
+              setTimeout(() => {
+                newsletterMessage.className = 'newsletter__message';
+              }, 5000);
+            }
+          }
+        } catch (error) {
+          if (newsletterMessage) {
             newsletterMessage.className = 'newsletter__message error';
-            newsletterMessage.textContent = data.error || 'Error al suscribirse';
+            newsletterMessage.textContent = 'Error de conexión. Intenta de nuevo.';
             
             setTimeout(() => {
               newsletterMessage.className = 'newsletter__message';
             }, 5000);
           }
-        } catch (error) {
-          newsletterMessage.className = 'newsletter__message error';
-          newsletterMessage.textContent = 'Error de conexión. Intenta de nuevo.';
-          
-          setTimeout(() => {
-            newsletterMessage.className = 'newsletter__message';
-          }, 5000);
         }
       });
     }
+
   </script>
 </html>
 

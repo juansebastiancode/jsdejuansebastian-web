@@ -42,7 +42,7 @@ body {
   top: 0;
   z-index: 10;
   backdrop-filter: blur(12px);
-  background: rgba(5, 1, 10, 0.85);
+  background: rgba(5, 1, 10, 0.4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -903,7 +903,7 @@ main {
     grid-template-columns: 1fr;
     background: #000;
     box-shadow: none;
-    margin-top: 4rem;
+    margin-top: 0.5rem;
   }
 
   .feature--book::after {
