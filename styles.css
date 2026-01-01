@@ -202,16 +202,16 @@ main {
 /* Hero Section */
 .hero {
     background-color: #ffffff;
-    min-height: 70vh;
+    min-height: auto;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 8rem 2rem 2rem;
+    padding: 10rem 2rem 7rem;
     position: relative;
     overflow: hidden;
     z-index: 1;
     margin-top: -80px;
-    padding-top: calc(3rem + 80px);
+    padding-top: calc(10rem + 80px);
 }
 
 /* Sección Presentación Personal */
