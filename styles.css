@@ -211,7 +211,7 @@ main {
     overflow: hidden;
     z-index: 1;
     margin-top: -80px;
-    padding-top: calc(8rem + 80px);
+    padding-top: calc(3rem + 80px);
 }
 
 /* Sección Presentación Personal */
