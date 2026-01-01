@@ -1,422 +1,283 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="jsdejuansebastian: pensamiento, consciencia y proyectos de libertad condensados en un libro corto."
-    />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="canonical" href="https://jsdejuansebastian.com/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="jsdejuansebastian" />
-    <meta
-      property="og:description"
-      content="Solo quiero venderte mi libro. Pensamiento, consciencia y libertad sin rodeos."
-    />
-    <meta property="og:url" content="https://jsdejuansebastian.com/" />
-    <meta property="og:image" content="foto.jpeg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="jsdejuansebastian" />
-    <meta
-      name="twitter:description"
-      content="Libro breve sobre pensamiento, consciencia y libertad."
-    />
-    <meta name="twitter:image" content="foto.jpeg" />
-    <title>jsdejuansebastian</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Book",
-        "name": "Grácil vida",
-        "author": {
-          "@type": "Person",
-          "name": "Juan Sebastian"
-        },
-        "description": "Libro corto donde resumo mi filosofía sobre pensamiento, consciencia y libertad.",
-        "inLanguage": "es",
-        "url": "https://www.amazon.es/Grácil-vida-Breves-textos-cuestiones/dp/B0DBGKMRLQ",
-        "image": "libro.jpg"
-      }
-    </script>
-  </head>
-  <body>
-    <nav class="site-nav">
-      <div class="site-nav__brand">jsdejuansebastian</div>
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span class="menu-toggle__line"></span>
-        <span class="menu-toggle__line"></span>
-        <span class="menu-toggle__line"></span>
-      </button>
-      <ul class="site-nav__menu">
-        <li>
-          <a href="https://www.instagram.com/jsdejuansebastian" target="_blank" rel="noreferrer">
-            Instagram
-          </a>
-        </li>
-        <li>
-          <a href="https://www.tiktok.com/@jsdejuansebastian" target="_blank" rel="noreferrer">
-            TikTok
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/juan-sebasti%C3%A1n-65235b221/" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-        </li>
-        <li>
-          <a href="https://www.amazon.es/Grácil-vida-Breves-textos-cuestiones/dp/B0DBGKMRLQ" target="_blank" rel="noreferrer">
-            Amazon
-          </a>
-        </li>
-        <li>
-          <a href="/legal.html">Legal</a>
-        </li>
-      </ul>
-    </nav>
-    <header class="hero">
-      <div class="hero__text">
-        <h1 id="filosofia" data-type-title>Solo hablo de <br>dos cosas. Desliza.</h1>
-        <div class="hero__cta hero__cta--text" aria-label="Conceptos clave">
-          <span>Libertad</span>
-          <span>Y</span>
-          <span>Consciencia</span>
-        </div>
-      </div>
-      <div class="hero__portrait">
-        <img src="foto.jpeg" alt="Retrato conceptual de Juan Sebastian" />
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Juan Sebastián Webs</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Transparente -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1 class="logo">Juan Sebastián Webs</h1>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link active" data-page="inicio">Inicio</a></li>
+                <li><a href="#quienes-somos" class="nav-link" data-page="quienes-somos">Sobre Mí</a></li>
+                <li><a href="#aviso-legal" class="nav-link" data-page="aviso-legal">Aviso Legal</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
     </header>
 
-    <main>
-      <section class="feature feature--book" id="libro">
-        <figure class="feature__image">
-          <img src="libro.jpg" alt="Portada de Grácil vida" />
-        </figure>
-        <div class="feature__content">
-          <p style="color: var(--muted); text-transform: uppercase; letter-spacing: 0.2em; font-size: clamp(1.2rem, 3vw, 2rem); margin-bottom: 1rem; font-family: var(--font-sans);">1. Consciencia</p>
-          <p>Filosofía sobre el pensamiento, la conscienica y la vida. Directo, MUY CORTO y sin rodeos</p>
-          <a
-            class="btn btn--amazon"
-            href="https://www.amazon.es/Grácil-vida-Breves-textos-cuestiones/dp/B0DBGKMRLQ"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Ver en Amazon
-          </a>
-        </div>
-      </section>
+    <!-- Página Principal -->
+    <main id="main-content">
+        <!-- Sección Inicio -->
+        <section id="inicio" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <p class="hero-subtitle">Quieres una <span class="whatsapp-green">web para tu empresa</span></p>
+                    <h2 class="hero-title">Hola, soy Juan Sebastian</h2>
+                </div>
+            </div>
 
-      <section class="feature feature--book feature--coming-soon" id="libertad">
-        <figure class="feature__image feature__image--loading">
-          <div class="book-loading">
-            <div class="book-loading__spinner"></div>
-            <div class="book-loading__text">Escribiendo...</div>
-          </div>
-        </figure>
-        <div class="feature__content">
-          <p style="color: var(--muted); text-transform: uppercase; letter-spacing: 0.2em; font-size: clamp(1.2rem, 3vw, 2rem); margin-bottom: 1rem; font-family: var(--font-sans);">2. Libertad</p>
-          <p>Próximamente disponible. Reflexiones sobre la libertad y cómo conquistarla.</p>
-          <button class="btn btn--amazon btn--coming-soon" disabled>
-            Pronto en Amazon
-          </button>
-        </div>
-      </section>
+            <!-- Sección Presentación Personal -->
+            <section class="personal-intro-section">
+                <div class="container">
+                    <div class="personal-intro-content">
+                        <div class="personal-photo">
+                            <img src="js.png" alt="Juan Sebastian" class="intro-photo">
+                        </div>
+                        <div class="personal-text">
+                            <p class="intro-message">Te hago yo la página web. Sin complicaciones, nos ponemos en contacto y me cuentas como la quieres. En pocos días la tienes.</p>
+                            <div class="intro-buttons">
+                                <a href="#contacto" class="btn-intro btn-contact">Contactar</a>
+                                <a href="#quienes-somos" class="btn-intro btn-about">Saber más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
+            <!-- Sección Qué Es -->
+            <section class="what-is-section">
+                <div class="container">
+                    <div class="hero-features">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                    <path d="M2 17l10 5 10-5"></path>
+                                    <path d="M2 12l10 5 10-5"></path>
+                                </svg>
+                            </div>
+                            <p><strong>Desarrollo Web</strong> - Creo sitios web modernos y funcionales con las últimas tecnologías</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                            </div>
+                            <p>Diseño y experiencia de usuario <strong>enfocados en la simplicidad</strong> y la funcionalidad</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <p><strong>Siempre en contacto</strong> por si surge alguna duda o corrección que haya que hacer</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Mis Servicios -->
+            <section class="how-it-works-section">
+                <div class="container">
+                    <h2 class="section-title">Tu web en todas partes</h2>
+                    <div class="devices-container">
+                        <div class="device-card">
+                            <div class="desktop-wrapper">
+                                <div class="device-screen desktop-screen">
+                                    <div class="screen-content">
+                                        <div class="browser-bar">
+                                            <div class="browser-dots">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="screen-inner"></div>
+                                    </div>
+                                </div>
+                                <div class="desktop-stand"></div>
+                            </div>
+                        </div>
+                        <div class="device-card">
+                            <div class="device-screen tablet-screen">
+                                <div class="screen-content">
+                                    <div class="screen-inner"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="device-card">
+                            <div class="device-screen mobile-screen">
+                                <div class="screen-content">
+                                    <div class="screen-inner"></div>
+                                    <div class="mobile-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Contacto -->
+            <section id="contacto" class="contact-section">
+                <div class="container">
+                    <h2 class="section-title">Contáctame</h2>
+                    <p class="contact-intro">Estaré encantado de escuchar tu proyecto...<br>sin compromiso ninguno</p>
+                    <div class="contact-simple">
+                        <a href="https://wa.me/34627183462" target="_blank" class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-label">WhatsApp o Llámanos</span>
+                                <span class="contact-value">+34 627 183 462</span>
+                            </div>
+                        </a>
+                        <a href="mailto:contacto@juansebastian.com" class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-label">Correo</span>
+                                <span class="contact-value">contacto@juansebastian.com</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Página Sobre Mí -->
+        <section id="quienes-somos" class="page">
+            <div class="page-content">
+                <div class="container">
+                    <h2 class="page-title">Sobre Mí</h2>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p>¡Hola! Me llamo <strong>Juan Sebastián Martínez Laso</strong>, tengo 23 años, Ingeniero Informático especializado en Tecnologías de la Información por la Universidad Politécnica de Valencia.</p>
+                            <p>Soy desarrollador web apasionado por crear soluciones digitales simples y efectivas. Me especializo en crear páginas web personalizadas que se adaptan perfectamente a las necesidades de cada empresa, desde landing pages hasta aplicaciones web completas.</p>
+                            <p>Estoy ubicado en <strong>Valencia, España</strong>.</p>
+                            <div style="text-align: center; margin: 3rem 0; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+                                <div style="position: relative; display: flex; justify-content: center; align-items: center; width: 100%; max-width: 800px; gap: 5px;">
+                                    <img src="js.png" alt="Juan Sebastián Martínez Laso" style="width: 300px; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: rotate(-5deg); position: relative; z-index: 2;">
+                                    <img src="upv.jpeg" alt="Universidad Politécnica de Valencia" style="width: 300px; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: rotate(5deg); position: relative; z-index: 1;">
+                                </div>
+                            </div>
+                            <h3 style="margin-top: 5rem;">Mi Enfoque</h3>
+                            <p><strong>SIMPLICIDAD Y FUNCIONALIDAD</strong> - Las mejores soluciones son las más simples. Me enfoco en desarrollar proyectos que sean fáciles de usar, rápidos y eficientes, tanto para ordenador como para móvil.</p>
+                            <p style="margin-bottom: 5rem;">Estoy al lado de cada cliente, acompañándolo en cada paso del proceso. Tu éxito es mi prioridad, y por eso me aseguro de estar presente cuando me necesites, escuchando tus necesidades y adaptando la solución para que funcione perfectamente contigo. Sin complicaciones, nos ponemos en contacto y me cuentas cómo la quieres. En pocos días la tienes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página Aviso Legal -->
+        <section id="aviso-legal" class="page">
+            <div class="page-content">
+                <div class="container">
+                    <h2 class="page-title">Aviso Legal</h2>
+                    <div class="legal-content">
+                        <div class="legal-section">
+                            <h3>1. Datos Identificativos</h3>
+                            <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, a continuación se reflejan los siguientes datos:</p>
+                            <p>El titular del dominio web es <strong>Juan Sebastián</strong>, con domicilio a estos efectos en España.</p>
+                        </div>
+                        <div class="legal-section">
+                            <h3>2. Usuarios</h3>
+                            <p>El acceso y/o uso de este sitio web atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas.</p>
+                        </div>
+                        <div class="legal-section">
+                            <h3>3. Uso del Portal</h3>
+                            <p>El sitio web proporciona el acceso a multitud de informaciones, servicios, programas o datos (en adelante, "los contenidos") en Internet pertenecientes a Juan Sebastián o a sus licenciantes a los que el Usuario puede tener acceso.</p>
+                        </div>
+                        <div class="legal-section">
+                            <h3>4. Protección de Datos</h3>
+                            <p>Este sitio web cumple con las directrices de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales y del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016.</p>
+                            <p>El Usuario tiene derecho a obtener confirmación sobre si estamos tratando datos personales que le conciernan, o no. Las personas interesadas tienen derecho a acceder a sus datos personales, así como a solicitar la rectificación de los datos inexactos o, en su caso, solicitar su supresión cuando, entre otros motivos, los datos ya no sean necesarios para los fines que fueron recogidos.</p>
+                        </div>
+                        <div class="legal-section">
+                            <h3>5. Propiedad Intelectual e Industrial</h3>
+                            <p>Juan Sebastián por sí o como cesionaria, es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma.</p>
+                        </div>
+                        <div class="legal-section">
+                            <h3>6. Modificaciones</h3>
+                            <p>Juan Sebastián se reserva el derecho de realizar sin previo aviso las modificaciones que considere oportunas en su portal, pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se presten a través de la misma como la forma en la que éstos aparezcan presentados o localizados en su portal.</p>
+                        </div>
+                        <div class="legal-section">
+                            <h3>7. Enlaces</h3>
+                            <p>En el caso de que en el sitio web se dispusiesen enlaces o hipervínculos hacía otros sitios de Internet, Juan Sebastián no ejercerá ningún tipo de control sobre dichos sitios y contenidos.</p>
+                        </div>
+                        <div class="legal-section">
+                            <h3>8. Derecho de Exclusión</h3>
+                            <p>Juan Sebastián se reserva el derecho a denegar o retirar el acceso al portal y/o los servicios ofrecidos sin necesidad de advertencia, a instancia propia o de un tercero, a aquellos usuarios que incumplan las Condiciones Generales de Uso.</p>
+                        </div>
+                        <div class="legal-section">
+                            <h3>9. Legislación y Jurisdicción Aplicable</h3>
+                            <p>La relación entre Juan Sebastián y el Usuario se regirá por la normativa española vigente y cualquier controversia se someterá a los Juzgados y tribunales correspondientes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-  </body>
-  <script>
-    const title = document.querySelector("[data-type-title]");
-    if (title) {
-      const html = title.innerHTML;
-      title.innerHTML = "";
-      const parts = html.split("<br>");
-      
-      parts.forEach((part, partIdx) => {
-        if (partIdx > 0) {
-          const br = document.createElement("br");
-          title.appendChild(br);
-        }
-        [...part].forEach((char, idx) => {
-          const span = document.createElement("span");
-          span.textContent = char === " " ? "\u00A0" : char;
-          const totalIdx = parts.slice(0, partIdx).join("").length + idx;
-          span.style.setProperty("--char-delay", `${totalIdx * 45}ms`);
-          span.classList.add("char");
-          title.appendChild(span);
-        });
-      });
-    }
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".site-nav__menu");
-    
-    if (menuToggle && navMenu) {
-      menuToggle.addEventListener("click", () => {
-        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-        menuToggle.setAttribute("aria-expanded", !isOpen);
-        menuToggle.classList.toggle("menu-toggle--open");
-        navMenu.classList.toggle("site-nav__menu--open");
-        document.body.classList.toggle("menu-open");
-      });
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2 class="footer-logo">Juan Sebastián Webs</h2>
+                    <p class="footer-slogan">Desarrollador web y creador de contenido digital</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3 class="footer-title">Navegación</h3>
+                        <ul class="footer-menu">
+                            <li><a href="#inicio" class="footer-link" data-page="inicio">Inicio</a></li>
+                            <li><a href="#quienes-somos" class="footer-link" data-page="quienes-somos">Sobre Mí</a></li>
+                            <li><a href="#aviso-legal" class="footer-link" data-page="aviso-legal">Aviso Legal</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-title">Contacto</h3>
+                        <ul class="footer-menu">
+                            <li><a href="https://wa.me/34627183462" target="_blank" class="footer-link">+34 627 183 462</a></li>
+                            <li><a href="mailto:contacto@juansebastian.com" class="footer-link">contacto@juansebastian.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-copyright">&copy; 2024 Juan Sebastian. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-      navMenu.addEventListener("click", (e) => {
-        if (e.target.tagName === "A") {
-          menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.classList.remove("menu-toggle--open");
-          navMenu.classList.remove("site-nav__menu--open");
-          document.body.classList.remove("menu-open");
-        }
-      });
-
-      document.addEventListener("click", (e) => {
-        if (navMenu.classList.contains("site-nav__menu--open") && 
-            !navMenu.contains(e.target) && 
-            !menuToggle.contains(e.target)) {
-          menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.classList.remove("menu-toggle--open");
-          navMenu.classList.remove("site-nav__menu--open");
-          document.body.classList.remove("menu-open");
-        }
-      });
-    }
-
-    // Configuración de la API
-    // Si hay una variable de entorno configurada, úsala, sino detecta automáticamente
-    const API_BASE_URL = window.API_BASE_URL || (
-      window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-        ? 'http://localhost:8080'
-        : 'https://jsdejuansebastian-admin-production.up.railway.app'
-    );
-    const API_HISTORIAL_URL = `${API_BASE_URL}/api/reflexiones`;
-
-    // Función para formatear fecha
-    function formatearFecha(fechaString) {
-      if (!fechaString) return '';
-      const meses = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
-      const fecha = new Date(fechaString + 'T00:00:00');
-      const dia = fecha.getDate();
-      const mes = meses[fecha.getMonth()];
-      return `${dia} ${mes}`;
-    }
-
-    // Cargar todas las reflexiones del historial
-    async function cargarReflexiones() {
-      try {
-        console.log('Intentando cargar reflexiones desde:', API_HISTORIAL_URL);
-        const response = await fetch(API_HISTORIAL_URL);
-        
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const reflexiones = await response.json();
-        console.log('Reflexiones recibidas:', reflexiones);
-        
-        const quotesList = document.getElementById('quotesList');
-        if (!quotesList) {
-          console.error('No se encontró el elemento quotesList');
-          return;
-        }
-        
-        // Limpiar la lista
-        quotesList.innerHTML = '';
-        
-        // Crear elementos para cada reflexión
-        reflexiones.forEach(reflexion => {
-          if (!reflexion.titulo || !reflexion.parrafo) return;
-          
-          const item = document.createElement('div');
-          item.className = 'quotes__item';
-          
-          const fecha = document.createElement('span');
-          fecha.className = 'quotes__date';
-          fecha.textContent = formatearFecha(reflexion.fecha);
-          
-          const titulo = document.createElement('p');
-          titulo.className = 'quotes__line';
-          titulo.textContent = reflexion.titulo;
-          
-          const texto = document.createElement('div');
-          texto.className = 'quotes__text';
-          const parrafo = document.createElement('p');
-          parrafo.textContent = reflexion.parrafo;
-          texto.appendChild(parrafo);
-          
-          item.appendChild(fecha);
-          item.appendChild(titulo);
-          item.appendChild(texto);
-          
-          quotesList.appendChild(item);
-        });
-        
-        console.log(`Reflexiones cargadas exitosamente: ${reflexiones.length}`);
-      } catch (error) {
-        console.error('Error al cargar las reflexiones:', error);
-        console.error('Detalles del error:', error.message);
-      }
-    }
-
-    // Newsletter
-    const newsletterForm = document.getElementById('newsletterForm');
-    const newsletterMessage = document.getElementById('newsletterMessage');
-    const newsletterEmail = document.getElementById('newsletterEmail');
-    const newsletterButton = document.getElementById('newsletterButton');
-    
-    // Función para validar email y mostrar/ocultar botón
-    function validarEmail() {
-      const email = newsletterEmail?.value.trim();
-      const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
-      const esValido = email && emailRegex.test(email);
-      const hayTexto = email && email.length > 0;
-      const privacyCheckbox = document.getElementById('privacyCheckbox');
-      const privacyAceptada = privacyCheckbox ? privacyCheckbox.checked : false;
-      
-      if (newsletterButton) {
-        // Mostrar botón si hay texto, ocultarlo si está vacío
-        if (hayTexto) {
-          newsletterButton.style.display = 'block';
-          newsletterButton.style.setProperty('display', 'block', 'important');
-          // Habilitar solo si es válido Y la política está aceptada
-          newsletterButton.disabled = !(esValido && privacyAceptada);
-        } else {
-          newsletterButton.style.display = 'none';
-          newsletterButton.style.setProperty('display', 'none', 'important');
-          newsletterButton.disabled = true;
-        }
-      }
-    }
-    
-    // Asegurar que el botón esté oculto al cargar la página
-    if (newsletterButton) {
-      newsletterButton.style.display = 'none';
-      newsletterButton.style.setProperty('display', 'none', 'important');
-    }
-    
-    // Validar en tiempo real mientras el usuario escribe
-    if (newsletterEmail) {
-      newsletterEmail.addEventListener('input', validarEmail);
-      newsletterEmail.addEventListener('blur', validarEmail);
-    }
-    
-    // Validar cuando cambia el checkbox de privacidad
-    const privacyCheckbox = document.getElementById('privacyCheckbox');
-    if (privacyCheckbox) {
-      privacyCheckbox.addEventListener('change', validarEmail);
-    }
-    
-    if (newsletterForm) {
-      newsletterForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const email = newsletterEmail?.value.trim();
-        const privacyCheckbox = document.getElementById('privacyCheckbox');
-        
-        if (!email) {
-          return;
-        }
-        
-        // Validar formato de email
-        const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
-        if (!emailRegex.test(email)) {
-          if (newsletterMessage) {
-            newsletterMessage.className = 'newsletter__message error';
-            newsletterMessage.textContent = 'Por favor, introduce un correo electrónico válido';
-            
-            setTimeout(() => {
-              newsletterMessage.className = 'newsletter__message';
-            }, 5000);
-          }
-          return;
-        }
-        
-        // Validar que la política de privacidad esté aceptada
-        if (!privacyCheckbox || !privacyCheckbox.checked) {
-          if (newsletterMessage) {
-            newsletterMessage.className = 'newsletter__message error';
-            newsletterMessage.textContent = 'Debes aceptar la política de privacidad para continuar';
-            
-            setTimeout(() => {
-              newsletterMessage.className = 'newsletter__message';
-            }, 5000);
-          }
-          return;
-        }
-        
-        try {
-          const response = await fetch(`${API_BASE_URL}/api/newsletter/subscribe`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email })
-          });
-          
-          const data = await response.json();
-          
-          if (response.ok) {
-            if (newsletterMessage) {
-              newsletterMessage.className = 'newsletter__message success';
-              newsletterMessage.textContent = 'Perfecto!';
-            }
-            if (newsletterForm) {
-              newsletterForm.reset();
-            }
-            
-            // Desmarcar checkbox después de enviar
-            if (privacyCheckbox) {
-              privacyCheckbox.checked = false;
-            }
-            
-            // Ocultar botón después de enviar
-            if (newsletterButton) {
-              newsletterButton.disabled = true;
-              newsletterButton.style.display = 'none';
-            }
-            
-            if (newsletterMessage) {
-              setTimeout(() => {
-                newsletterMessage.className = 'newsletter__message';
-              }, 5000);
-            }
-          } else {
-            if (newsletterMessage) {
-              newsletterMessage.className = 'newsletter__message error';
-              newsletterMessage.textContent = data.error || 'Error al suscribirse';
-              
-              setTimeout(() => {
-                newsletterMessage.className = 'newsletter__message';
-              }, 5000);
-            }
-          }
-        } catch (error) {
-          if (newsletterMessage) {
-            newsletterMessage.className = 'newsletter__message error';
-            newsletterMessage.textContent = 'Error de conexión. Intenta de nuevo.';
-            
-            setTimeout(() => {
-              newsletterMessage.className = 'newsletter__message';
-            }, 5000);
-          }
-        }
-      });
-    }
-
-  </script>
+    <script src="script.js"></script>
+</body>
 </html>
-
-
-
