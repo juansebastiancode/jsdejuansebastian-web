@@ -1382,6 +1382,23 @@ main {
         margin-bottom: 1.25rem;
     }
 
+    .about-text img {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .about-text div[style*="max-width: 800px"] {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+
+    .about-text div[style*="max-width: 800px"] img {
+        width: 100% !important;
+        max-width: 280px !important;
+        height: auto !important;
+    }
+
     .footer {
         padding: 3rem 1.5rem 1.5rem;
     }
@@ -1455,7 +1472,8 @@ main {
     }
 
     .logo {
-        font-size: 1.3rem;
+        font-size: 1.2rem !important;
+        letter-spacing: 2px !important;
     }
 
     .logo-icon {
@@ -1673,6 +1691,24 @@ main {
         margin-bottom: 1.125rem;
     }
 
+    .about-text img {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .about-text div[style*="max-width: 800px"] {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .about-text div[style*="max-width: 800px"] img {
+        width: 100% !important;
+        max-width: 250px !important;
+        height: auto !important;
+    }
+
     .footer {
         padding: 2.5rem 1rem 1rem;
     }
@@ -1708,7 +1744,8 @@ main {
     }
 
     .footer-logo {
-        font-size: 1.3rem;
+        font-size: 1.2rem !important;
+        letter-spacing: 2px !important;
     }
 
     .footer-slogan {
