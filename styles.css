@@ -1758,6 +1758,13 @@ main {
         height: 22px;
     }
 
+    .desktop-screen .device-preview {
+        transform: scale(0.22);
+        width: 454%;
+        height: 454%;
+        margin-left: -227%;
+    }
+
     .tablet-screen {
         width: 130px;
         height: 170px;
