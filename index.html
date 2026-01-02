@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
@@ -11,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header Transparente -->
     <header class="header" id="header">
         <nav class="nav">
@@ -23,13 +23,13 @@
                 <li><a href="#inicio" class="nav-link active" data-page="inicio">Inicio</a></li>
                 <li><a href="#quienes-somos" class="nav-link" data-page="quienes-somos">Sobre Mí</a></li>
                 <li><a href="#aviso-legal" class="nav-link" data-page="aviso-legal">Aviso Legal</a></li>
-            </ul>
+      </ul>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-        </nav>
+    </nav>
     </header>
 
     <!-- Página Principal -->
@@ -59,8 +59,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+        </div>
+      </section>
 
             <!-- Sección Qué Es -->
             <section class="what-is-section">
@@ -96,8 +96,8 @@
                             <p><strong>Siempre en contacto</strong> por si surge alguna duda o corrección que haya que hacer</p>
                         </div>
                     </div>
-                </div>
-            </section>
+        </div>
+      </section>
 
             <!-- Sección Mis Servicios -->
             <section class="how-it-works-section">
@@ -144,7 +144,6 @@
             <section id="contacto" class="contact-section">
                 <div class="container">
                     <h2 class="section-title">Contáctame</h2>
-                    <p class="contact-intro">Estaré encantado de escuchar tu proyecto...<br>sin compromiso ninguno</p>
                     <div class="contact-simple">
                         <a href="https://wa.me/34627183462" target="_blank" class="contact-item">
                             <div class="contact-icon">
@@ -169,6 +168,41 @@
                                 <span class="contact-value">contacto@juansebastian.com</span>
                             </div>
                         </a>
+                        <a href="https://instagram.com/jsdejuansebastian" target="_blank" class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-label">Instagram</span>
+                                <span class="contact-value">@jsdejuansebastian</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <h3 class="form-title">Cuéntame!</h3>
+                        <form action="https://formspree.io/f/mpqwdkpl" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <label for="email">Tu email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Tu teléfono:</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Tu mensaje:</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">Enviar</button>
+                        </form>
                     </div>
                 </div>
             </section>
