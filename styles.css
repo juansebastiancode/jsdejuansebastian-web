@@ -319,7 +319,7 @@ main {
 }
 
 .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 300;
     color: var(--text-light);
     margin-bottom: 0;
@@ -334,6 +334,11 @@ main {
 .whatsapp-green {
     color: var(--accent-color);
     font-weight: 400;
+}
+
+.rotating-word {
+    display: inline-block;
+    transition: opacity 0.3s ease;
 }
 
 .hero-subtitle {
@@ -407,8 +412,8 @@ main {
 }
 
 .feature-icon svg {
-    width: 48px;
-    height: 48px;
+    width: 72px;
+    height: 72px;
     transition: transform 0.3s ease;
 }
 
@@ -953,9 +958,9 @@ main {
 .contact-form-container {
     max-width: 600px;
     margin: 0 auto;
-    padding: 2.5rem;
+    padding: 1.5rem;
     background: #ffffff;
-    border-radius: 12px;
+    border-radius: 6px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
@@ -995,7 +1000,7 @@ main {
 .form-group textarea {
     padding: 0.9rem 1.2rem;
     border: 2px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 1rem;
     font-family: 'Inter', sans-serif;
     transition: all 0.3s ease;
@@ -1019,7 +1024,7 @@ main {
     background: var(--text-color);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;

@@ -235,5 +235,33 @@ document.addEventListener('DOMContentLoaded', function() {
         // Si no hay hash, mostrar la página de inicio por defecto
         showPage('inicio');
     }
+
+    // Limpiar formulario después de enviar
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            // Permitir que el formulario se envíe normalmente
+            setTimeout(() => {
+                contactForm.reset();
+            }, 100);
+        });
+    }
+
+    // Rotación de palabras en el hero
+    const rotatingWord = document.querySelector('.rotating-word');
+    if (rotatingWord) {
+        const words = ['empresas', 'negocios', 'personas', 'interesados',];
+        let currentIndex = 0;
+        
+        setInterval(() => {
+            rotatingWord.style.opacity = '0';
+            
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % words.length;
+                rotatingWord.textContent = words[currentIndex];
+                rotatingWord.style.opacity = '1';
+            }, 300);
+        }, 3000);
+    }
 });
 
