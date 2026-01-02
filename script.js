@@ -1,3 +1,14 @@
+// Detectar modo preview y ocultar sección de dispositivos
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('preview') === 'true') {
+    document.addEventListener('DOMContentLoaded', function() {
+        const devicesSection = document.querySelector('.how-it-works-section');
+        if (devicesSection) {
+            devicesSection.style.display = 'none';
+        }
+    });
+}
+
 // Navegación entre páginas
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
@@ -250,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Rotación de palabras en el hero
     const rotatingWord = document.querySelector('.rotating-word');
     if (rotatingWord) {
-        const words = ['empresas', 'negocios', 'personas', 'interesados',];
+        const words = ['empresas', 'negocios', 'personas',];
         let currentIndex = 0;
         
         setInterval(() => {

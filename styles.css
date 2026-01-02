@@ -561,15 +561,15 @@ main {
 }
 
 .desktop-screen {
-    width: 300px;
-    height: 200px;
+    width: 600px;
+    height: 375px;
     padding: 8px;
     margin-bottom: 0;
 }
 
 .desktop-stand {
-    width: 18px;
-    height: 30px;
+    width: 36px;
+    height: 60px;
     background: #1a1a1a;
     border-radius: 0 0 4px 4px;
     margin-top: -2px;
@@ -579,15 +579,15 @@ main {
 }
 
 .tablet-screen {
-    width: 180px;
-    height: 240px;
+    width: 240px;
+    height: 320px;
     padding: 7px;
     border-radius: 16px;
 }
 
 .mobile-screen {
-    width: 80px;
-    height: 160px;
+    width: 120px;
+    height: 240px;
     padding: 6px;
     border-radius: 20px;
 }
@@ -659,12 +659,57 @@ main {
 .screen-inner {
     width: 100%;
     height: calc(100% - 30px);
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    opacity: 0.1;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.device-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: white;
+    pointer-events: none;
+}
+
+.desktop-screen .device-preview {
+    transform: scale(0.28);
+    transform-origin: top center;
+    width: 357%;
+    height: 357%;
+    left: 50%;
+    margin-left: -178.5%;
+}
+
+.tablet-screen .device-preview {
+    transform: scale(0.18);
+    transform-origin: top center;
+    width: 555%;
+    height: 555%;
+    left: 50%;
+    margin-left: -277.5%;
+    top: 0;
+}
+
+.mobile-screen .device-preview {
+    transform: scale(0.11);
+    transform-origin: top center;
+    width: 909%;
+    height: 909%;
+    left: 50%;
+    margin-left: -454.5%;
+    top: 0;
 }
 
 .desktop-screen .screen-inner {
     height: calc(100% - 30px);
+}
+
+.tablet-screen .screen-inner {
+    height: 100%;
 }
 
 .mobile-screen .screen-inner {
@@ -994,6 +1039,12 @@ main {
     font-size: 1rem;
     font-weight: 500;
     color: var(--text-color);
+}
+
+.form-group label .optional {
+    color: var(--text-light);
+    font-weight: 400;
+    font-size: 0.9rem;
 }
 
 .form-group input,
