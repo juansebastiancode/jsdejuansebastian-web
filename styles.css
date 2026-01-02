@@ -1885,7 +1885,13 @@ main {
 
     .contact-form-container {
         padding: 1.5rem;
-        margin: 3rem auto 0;
+        margin: 3rem 0 0 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .contact-section {
+        padding: 7rem 1rem;
     }
 
     .form-title {
