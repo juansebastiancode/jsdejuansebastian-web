@@ -21,9 +21,6 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     background: #f5f5f5;
-    background-image: 
-        radial-gradient(circle at 1px 1px, rgba(0,0,0,0.065) 1px, transparent 0);
-    background-size: 3px 3px;
 }
 
 /* Header Transparente */
@@ -218,10 +215,6 @@ main {
 .personal-intro-section {
     padding: 5rem 2rem 0 2rem;
     background-color: #f5f5f5;
-    background-image: 
-        radial-gradient(circle at 1px 1px, rgba(0,0,0,0.065) 1px, transparent 0);
-    background-size: 3px 3px;
-    background-position: 0 1px;
 }
 
 .personal-intro-content {
@@ -306,10 +299,6 @@ main {
 .what-is-section {
     padding: 0 2rem 7rem 2rem;
     background-color: #f5f5f5;
-    background-image: 
-        radial-gradient(circle at 1px 1px, rgba(0,0,0,0.065) 1px, transparent 0);
-    background-size: 3px 3px;
-    background-position: 0 1px;
 }
 
 .what-is-section .section-title {
@@ -779,9 +768,6 @@ main {
 .contact-section {
     padding: 7rem 2rem;
     background: #f5f5f5;
-    background-image: 
-        radial-gradient(circle at 1px 1px, rgba(0,0,0,0.065) 1px, transparent 0);
-    background-size: 3px 3px;
 }
 
 .container {
@@ -1064,9 +1050,6 @@ main {
 @media (max-width: 768px) {
     body {
         background: #f5f5f5;
-        background-image: 
-            radial-gradient(circle at 1px 1px, rgba(0,0,0,0.065) 1px, transparent 0);
-        background-size: 3px 3px;
     }
     
     /* Solo el área del hero tiene fondo blanco */
@@ -1094,9 +1077,6 @@ main {
     #quienes-somos .page-content,
     #aviso-legal .page-content {
         background: #f5f5f5;
-        background-image: 
-            radial-gradient(circle at 1px 1px, rgba(0,0,0,0.065) 1px, transparent 0);
-        background-size: 3px 3px;
     }
     
     .header.hidden {
@@ -1234,6 +1214,11 @@ main {
 
     .personal-text {
         text-align: left;
+    }
+
+    .personal-text h3 {
+        text-align: left !important;
+        font-size: 1.4rem !important;
     }
 
     .intro-buttons {
@@ -1542,6 +1527,11 @@ main {
 
     .personal-text {
         text-align: left;
+    }
+
+    .personal-text h3 {
+        text-align: left !important;
+        font-size: 1.2rem !important;
     }
 
     .btn-intro {
