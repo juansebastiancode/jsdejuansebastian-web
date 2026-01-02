@@ -676,12 +676,12 @@ main {
 }
 
 .desktop-screen .device-preview {
-    transform: scale(0.28);
+    transform: scale(0.35);
     transform-origin: top center;
-    width: 357%;
-    height: 357%;
+    width: 285%;
+    height: 285%;
     left: 50%;
-    margin-left: -178.5%;
+    margin-left: -142.5%;
 }
 
 .tablet-screen .device-preview {
