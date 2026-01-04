@@ -20,7 +20,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
-    background: #f5f5f5;
+    background: #ffffff;
 }
 
 /* Header Transparente */
@@ -271,7 +271,7 @@ main {
 /* Sección Presentación Personal */
 .personal-intro-section {
     padding: 5rem 2rem 0 2rem;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
 }
 
 .personal-intro-content {
