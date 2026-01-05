@@ -9,7 +9,7 @@
     --secondary-color: #f8f9fa;
     --text-color: #1a1a1a;
     --text-light: #666666;
-    --accent-color: #20C05A;
+    --accent-color: #000000;
     --gradient-start: #667eea;
     --gradient-end: #764ba2;
     --shadow: rgba(0, 0, 0, 0.1);
@@ -298,6 +298,19 @@ main {
 
 .personal-text {
     flex: 1;
+}
+
+.name-title {
+    color: #666666 !important;
+    margin-bottom: 0 !important;
+}
+
+.sell-title {
+    font-size: 3.5rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.5rem !important;
+    white-space: nowrap;
+    line-height: 1.2;
 }
 
 .intro-message {
@@ -1260,7 +1273,7 @@ main {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border: 2px solid #25d366 !important;
+    border: 2px solid #000000 !important;
     box-shadow: none;
 }
 
@@ -1533,10 +1546,12 @@ main {
         -webkit-backdrop-filter: blur(20px);
         width: 100%;
         height: 100vh;
-        text-align: center;
+        text-align: left;
+        align-items: flex-start;
+        justify-content: flex-start;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        padding: 5rem 0 2rem;
+        padding: 5rem 2rem 2rem;
         gap: 0;
         z-index: 1000;
         overflow-y: auto;
@@ -1548,13 +1563,16 @@ main {
 
     .nav-link {
         color: var(--text-color);
-        padding: 1.5rem 2rem;
+        padding: 0.75rem 2rem;
         display: block;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         font-weight: 400;
         transition: all 0.3s ease;
         border-bottom: none;
         text-decoration: none;
+        text-align: left !important;
+        width: 100%;
+        text-align: left;
     }
 
     .nav-link:hover {
@@ -1571,6 +1589,7 @@ main {
         background: transparent;
         color: var(--accent-color);
         text-decoration: none;
+        font-weight: 700;
     }
     
     .nav-link.active::after {
@@ -1667,7 +1686,14 @@ main {
 
     .personal-text h3 {
         text-align: left !important;
+    }
+    
+    .name-title {
         font-size: 1.4rem !important;
+    }
+    
+    .sell-title {
+        font-size: 3.5rem !important;
     }
 
     .intro-buttons {
@@ -2009,7 +2035,20 @@ main {
 
     .personal-text h3 {
         text-align: left !important;
+    }
+    
+    .name-title {
         font-size: 1.2rem !important;
+        color: #666666 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .sell-title {
+        font-size: 3.5rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 0.5rem !important;
+        white-space: normal;
+        line-height: 1.2;
     }
 
     .btn-intro {
@@ -2253,13 +2292,13 @@ main {
 
     .contact-form-container {
         padding: 1.5rem;
-        margin: 3rem 0 0 0;
+        margin: 1rem 0 0 0;
         max-width: 100%;
         width: 100%;
     }
     
     .contact-section {
-        padding: 2rem 1rem;
+        padding: 2rem 1rem 4rem 1rem;
     }
 
     .form-title {
