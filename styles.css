@@ -2046,9 +2046,13 @@ main {
     .sell-title {
         font-size: 3.5rem !important;
         margin-top: 0 !important;
-        margin-bottom: 0.5rem !important;
+        margin-bottom: 0.8rem !important;
         white-space: normal;
         line-height: 1.2;
+    }
+    
+    .intro-message {
+        margin-top: 0.3rem !important;
     }
 
     .btn-intro {
