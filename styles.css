@@ -1525,7 +1525,7 @@ main {
     /* Las páginas de Quiénes Somos y Aviso Legal mantienen el fondo granulado */
     #quienes-somos .page-content,
     #aviso-legal .page-content {
-        background: #f5f5f5;
+        background: #ffffff;
     }
     
     .header.hidden {
