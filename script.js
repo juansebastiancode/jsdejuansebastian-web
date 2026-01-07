@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.getElementById('header');
     const btnContactar = document.getElementById('btnContactar');
 
+    // Detectar si estamos en index.html o en una página individual del blog
+    const isIndexPage = document.getElementById('inicio') !== null || window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
+
     // Función para cambiar de página
     function showPage(pageId) {
         pages.forEach(page => {
@@ -40,17 +43,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
         
-        if (navMenu.classList.contains('active')) {
+        if (navMenu && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
+            if (navToggle) navToggle.classList.remove('active');
         }
     }
 
     // Event listeners para los enlaces de navegación
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            // Si estamos en una página individual del blog, permitir navegación normal
+            if (!isIndexPage) {
+                // Los enlaces ya apuntan a index.html#seccion, así que dejamos que funcionen normalmente
+                // Solo cerramos el menú móvil si está abierto
+                if (navMenu && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    if (navToggle) navToggle.classList.remove('active');
+                }
+                return; // Permitir navegación normal
+            }
+
+            // Si estamos en index.html, usar la navegación interna
             e.preventDefault();
             const pageId = this.getAttribute('data-page');
+            const href = this.getAttribute('href');
+            
+            // Si el enlace tiene data-page, usarlo
             if (pageId === 'servicio' || pageId === 'precio') {
                 // Primero cambiar a la página de inicio
                 showPage('inicio');
@@ -63,6 +81,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 100);
             } else if (pageId) {
                 showPage(pageId);
+            } else if (href && href.includes('#')) {
+                // Si no tiene data-page pero tiene hash, extraerlo y navegar
+                const hash = href.split('#')[1];
+                const pageMap = {
+                    'inicio': 'inicio',
+                    'quienes-somos': 'quienes-somos',
+                    'sobre-ventas': 'sobre-ventas',
+                    'aviso-legal': 'aviso-legal'
+                };
+                if (pageMap[hash]) {
+                    showPage(pageMap[hash]);
+                }
             }
         });
     });
@@ -71,6 +101,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const footerLinks = document.querySelectorAll('.footer-link[data-page]');
     footerLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            // Si estamos en una página individual del blog, permitir navegación normal
+            if (!isIndexPage) {
+                // Los enlaces ya apuntan a index.html#seccion, así que dejamos que funcionen normalmente
+                return; // Permitir navegación normal
+            }
+
+            // Si estamos en index.html, usar la navegación interna
             e.preventDefault();
             const pageId = this.getAttribute('data-page');
             if (pageId === 'precio' || pageId === 'servicio') {

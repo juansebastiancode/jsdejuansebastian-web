@@ -185,6 +185,34 @@ main {
     display: block;
 }
 
+/* Asegurar que las páginas individuales del blog se muestren */
+main section.page.active {
+    display: block !important;
+}
+
+/* Para páginas individuales del blog, asegurar que siempre se vean */
+body:not(:has(#inicio)) main section.page.active {
+    display: block !important;
+}
+
+/* Asegurar que el contenido de las páginas individuales se vea */
+.page-content {
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+.page-title {
+    color: #1a1a1a !important;
+}
+
+.legal-section p {
+    color: #1a1a1a !important;
+}
+
+.legal-section h3 {
+    color: #1a1a1a !important;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -1166,7 +1194,7 @@ main {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 .about-text h3,
