@@ -196,6 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const pageMap = {
                     'inicio': 'inicio',
                     'quienes-somos': 'quienes-somos',
+                    'sobre-ventas': 'sobre-ventas',
                     'aviso-legal': 'aviso-legal'
                 };
                 if (pageMap[hash]) {
@@ -233,6 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const pageMap = {
                 'inicio': 'inicio',
                 'quienes-somos': 'quienes-somos',
+                'sobre-ventas': 'sobre-ventas',
                 'aviso-legal': 'aviso-legal'
             };
             if (pageMap[initialHash]) {
