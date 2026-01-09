@@ -117,23 +117,24 @@
                     
                     <div class="contact-form-container">
                         <h3 class="form-title">¡Cuéntame!</h3>
-                        <form action="https://formspree.io/f/mpqwdkpl" method="POST" class="contact-form">
+                        <form id="contactForm" action="https://formspree.io/f/mpqwdkpl" method="POST" class="contact-form">
+                            <div id="formMessage" style="display: none; padding: 1rem; margin-bottom: 1.5rem; border-radius: 6px; font-weight: 500; text-align: center;"></div>
                             <div class="form-group">
-                                <label for="email">Tu email:</label>
+                                <label for="email">Tu email: <span style="color: #000000;">*</span></label>
                                 <input type="email" id="email" name="email" required>
                             </div>
                             
                             <div class="form-group">
-                                <label for="phone">Tu teléfono: <span class="optional">*</span></label>
+                                <label for="phone">Tu teléfono:</label>
                                 <input type="tel" id="phone" name="phone">
                             </div>
                             
                             <div class="form-group">
-                                <label for="message">Tu mensaje:</label>
+                                <label for="message">Tu mensaje: <span style="color: #000000;">*</span></label>
                                 <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
                             
-                            <button type="submit" class="submit-btn">Enviar</button>
+                            <button type="submit" class="submit-btn" id="submitBtn">Enviar</button>
                         </form>
                     </div>
                 </div>

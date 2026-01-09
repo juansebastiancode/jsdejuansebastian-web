@@ -286,14 +286,76 @@ document.addEventListener('DOMContentLoaded', function() {
         showPage('inicio');
     }
 
-    // Limpiar formulario después de enviar
-    const contactForm = document.querySelector('.contact-form');
+    // Manejar envío del formulario con AJAX
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    const submitBtn = document.getElementById('submitBtn');
+    
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            // Permitir que el formulario se envíe normalmente
-            setTimeout(() => {
-                contactForm.reset();
-            }, 100);
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Deshabilitar el botón mientras se envía
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+            }
+            
+            // Ocultar mensajes anteriores
+            if (formMessage) {
+                formMessage.style.display = 'none';
+            }
+            
+            // Obtener los datos del formulario
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch('https://formspree.io/f/mpqwdkpl', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Mostrar mensaje de éxito
+                    if (formMessage) {
+                        formMessage.style.display = 'block';
+                        formMessage.style.backgroundColor = '#d4edda';
+                        formMessage.style.color = '#155724';
+                        formMessage.style.border = '1px solid #c3e6cb';
+                        formMessage.textContent = '✓ Enviado correctamente';
+                    }
+                    
+                    // Limpiar el formulario
+                    contactForm.reset();
+                    
+                    // Ocultar el mensaje después de 5 segundos
+                    setTimeout(() => {
+                        if (formMessage) {
+                            formMessage.style.display = 'none';
+                        }
+                    }, 5000);
+                } else {
+                    throw new Error('Error al enviar el formulario');
+                }
+            } catch (error) {
+                // Mostrar mensaje de error
+                if (formMessage) {
+                    formMessage.style.display = 'block';
+                    formMessage.style.backgroundColor = '#f8d7da';
+                    formMessage.style.color = '#721c24';
+                    formMessage.style.border = '1px solid #f5c6cb';
+                    formMessage.textContent = '✗ Error al enviar. Por favor, inténtalo de nuevo.';
+                }
+            } finally {
+                // Rehabilitar el botón
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Enviar';
+                }
+            }
         });
     }
 
